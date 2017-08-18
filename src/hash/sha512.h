@@ -1,0 +1,23 @@
+#ifndef PBKDF2_HMAC_SHA_BREAKER_SHA512_H
+    #define PBKDF2_HMAC_SHA_BREAKER_SHA512_H
+
+    #include <CL/cl.h>
+
+    #define SHA512_WORD_SIZE_IN_BITS 64
+
+    #define SHA512_BLOCK_SIZE_IN_BITS 1024
+
+    #define SHA512_BLOCK_SIZE_IN_BYTES ((SHA512_BLOCK_SIZE_IN_BITS) / 8)
+
+    #define SHA512_OUTPUT_SIZE_IN_BITS 512
+
+    #define SHA512_OUTPUT_SIZE_IN_BYTES ((SHA512_OUTPUT_SIZE_IN_BITS) / 8)
+
+    #define SHA512_OUTPUT_SIZE_IN_CHARACTERS (SHA512_OUTPUT_SIZE_IN_BYTES * 2)
+
+    #define SHA512_OUTPUT_BLOCKS ((SHA512_OUTPUT_SIZE_IN_BITS) / (SHA512_WORD_SIZE_IN_BITS))
+
+    char *sha512(char *message, cl_uint size);
+
+    char *sha512(const char *message, cl_uint size);
+#endif // PBKDF2_HMAC_SHA_BREAKER_SHA512_H
